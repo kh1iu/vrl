@@ -43,17 +43,17 @@ python data/build_data.py
 ```
 python train_vrl.py [save_model_name] -e [0-9]
 ```
-0: MNIST 3-rel (Table 1 in paper)
-1: MNIST 5-rel (Table 1 in paper)
-2: Omniglot 3-rel (Table 1 in paper)
-3: Omniglot 5-rel (Table 1 and Fig. 3 in paper)
-4: MNIST coupled-rel (Fig. 4 in paper)
-5: Relative facial expression changes (Fig. 5a, 8b in paper)
-6: Relative facial illumination condition changes (Fig. 5b, 8a in paper)
-7: Relative speech emotion changes (Fig. 5c, 8c in paper)
-8: MNIST 10-rel (Fig. 9 in paper)
-9: MNIST continuous-rel (Fig. 10, 11 in paper)
-
+0: MNIST 3-rel (Table 1 in paper)  
+1: MNIST 5-rel (Table 1 in paper)  
+2: Omniglot 3-rel (Table 1 in paper)  
+3: Omniglot 5-rel (Table 1 and Fig. 3 in paper)  
+4: MNIST coupled-rel (Fig. 4 in paper)  
+5: Relative facial expression changes (Fig. 5a, 8b in paper)  
+6: Relative facial illumination condition changes (Fig. 5b, 8a in paper)  
+7: Relative speech emotion changes (Fig. 5c, 8c in paper)  
+8: MNIST 10-rel (Fig. 9 in paper)  
+9: MNIST continuous-rel (Fig. 10, 11 in paper)  
+  
 Trained model will be saved in the saved_model (auto created) directoryfor later use.
 
 ### Step 4: Validation
