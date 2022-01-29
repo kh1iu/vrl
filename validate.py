@@ -38,7 +38,7 @@ def get_marker_style(num):
     return marker_style
     
 
-def evaluate(MODEL, CHECKPOINT, Z_TYPE):
+def evaluate(MODEL, CHECKPOINT):
 
     data_dir = os.getenv('DATA_PATH')
     assert data_dir is not None
@@ -57,7 +57,7 @@ def evaluate(MODEL, CHECKPOINT, Z_TYPE):
         
         # Learning discrete relationship with continuous or discrete
         # latent variable
-        if Z_TYPE == 0:
+        if model.setup['relation_sel'] != 'continuous':
 
             tr_iter,_,rpda_aug=load_data(fn=model.setup['data_file'],
                                          bsize=256,
@@ -252,7 +252,7 @@ def evaluate(MODEL, CHECKPOINT, Z_TYPE):
             
         # Learning continuous relative rotation relationship with
         # continuous 2-D latent variable
-        elif Z_TYPE == 1:
+        else:
 
             tr_iter,_,rpda_aug=load_data(fn=model.setup['data_file'],
                                          bsize=10,
@@ -346,9 +346,6 @@ def evaluate(MODEL, CHECKPOINT, Z_TYPE):
                 
             plt.show()
             
-        else:
-            raise ValueError('Unknown latent variable type!!')
-
 
             
 if __name__ == "__main__":
@@ -356,12 +353,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("model", help="model name")
     parser.add_argument("-c", "--checkpoint", help="checkpoint file", default=None)
-    parser.add_argument("-z", "--ztype", type=int,
-                        choices=[0, 1],
-                        help="latent variable type (0:discrete relationahips; 1:continuous rotation relationahips with continuous z)", default=0)
 
     args = parser.parse_args()
     
     evaluate(MODEL = args.model,
-             CHECKPOINT = args.checkpoint,
-             Z_TYPE = args.ztype)
+             CHECKPOINT = args.checkpoint)
