@@ -2,7 +2,7 @@
 
 VRL is an unsupervised learning method for addressing the relational learning problem where we learn the underlying relationship between a pair of data irrespective of the nature of those data. This repository contains the code used to generate reproducible experimental results in the paper:
 
-* Kuang-Hung Liu (2022). [Relational Learning with Variational Bayes.]()
+* [Relational Learning with Variational Bayes]()
 
 
 ## Requirements
